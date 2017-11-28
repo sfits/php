@@ -1,24 +1,29 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Gallery</title>
+	<title></title>
 </head>
 <body>
 
-<style type="text/css">
-	img {
-		border: 1px solid red;
-		width: 200px;
-		margin: 10px;
-	}
-</style>
-
+<form action="" method="GET">
+	<input type="text" name="letter">
+</form>
 <?php
-$imgs = [1=>'1.jpg', 2=>'2.jpg', 3=>'3.jpg', 4=>'4.jpg'];
-	foreach ($imgs as $num => $img) {
-		echo '<a href="sum.php?file=' . $num . '"><img src="/img/' . $imgs[$num] . '"></a>';
-	}
-?>
 
+$cities = ['Odessa', 'Kiro', 'Lugansk'];
+
+function Get($cities) {
+	foreach ($cities as $city) {
+		$letter = substr($city, 0, 1);
+		$getLetter = substr($_GET['letter'], 0, 1);
+		if ($letter == $getLetter) {
+			return $city;
+		}
+	}
+}
+echo Get($cities);
+
+?>
 </body>
 </html>
