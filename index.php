@@ -1,40 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="style.css" rel="stylesheet" type="text/css"/>
-	<title></title>
+	<title>Gallery</title>
 </head>
-<body><?php
-function writeData()
-{
-    if ($_POST['message']) {
-    	$file = file('db.txt');
-    	$file[] .= "\n" . $_POST['message'];
-    	file_put_contents('db.txt', $file);
-    	// header("Location: index.php");
-     //    exit;
-    }
+<body>
 
-}
-writeData();
-
-function readData() 
-{
-	$file = file('db.txt');
-	foreach ($file as $line) {
-		echo $line . '<br>';
+<style type="text/css">
+	img {
+		border: 1px solid red;
+		width: 200px;
+		margin: 10px;
 	}
-}
-readData();
-?>
+</style>
 
-<br><br>
-<form action="" method="post" valuse="s">
-	Add you message <br>
-	<input type="text" name="message"><br>
-	<input type="submit" value="Send">
+<?php
+$imgs = [1=>'1.jpg', 2=>'2.jpg', 3=>'3.jpg', 4=>'4.jpg'];
+	foreach ($imgs as $num => $img) {
+		echo '<a href="function.php?file=' . $num . '"><img src="/img/' . $imgs[$num] . '"></a>';
+	}
+?>
+<hr><br>
+<form action="function.php" method="post" enctype="multipart/form-data">
+<input type="file" name="img">
+ <input type="submit">
 </form>
-<br><br>
+
+
 
 </body>
 </html>
