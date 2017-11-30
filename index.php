@@ -1,29 +1,40 @@
-
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="style.css" rel="stylesheet" type="text/css"/>
 	<title></title>
 </head>
-<body>
+<body><?php
+function writeData()
+{
+    if ($_POST['message']) {
+    	$file = file('db.txt');
+    	$file[] .= "\n" . $_POST['message'];
+    	file_put_contents('db.txt', $file);
+    	// header("Location: index.php");
+     //    exit;
+    }
 
-<form action="" method="GET">
-	<input type="text" name="letter">
-</form>
-<?php
+}
+writeData();
 
-$cities = ['Odessa', 'Kiro', 'Lugansk'];
-
-function Get($cities) {
-	foreach ($cities as $city) {
-		$letter = substr($city, 0, 1);
-		$getLetter = substr($_GET['letter'], 0, 1);
-		if ($letter == $getLetter) {
-			return $city;
-		}
+function readData() 
+{
+	$file = file('db.txt');
+	foreach ($file as $line) {
+		echo $line . '<br>';
 	}
 }
-echo Get($cities);
-
+readData();
 ?>
+
+<br><br>
+<form action="" method="post" valuse="s">
+	Add you message <br>
+	<input type="text" name="message"><br>
+	<input type="submit" value="Send">
+</form>
+<br><br>
+
 </body>
 </html>
