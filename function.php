@@ -8,7 +8,7 @@ $newFile = basename($_FILES['img']['name']);
 $imgs [] = $newFile;
 
 // загрузка файлов на сервер
-$uploaddir = "D:/openserver/Openserver/domains/test.com/img/";
+$uploaddir = __DIR__ . '/img/';
 $uploadfile = $uploaddir . basename($_FILES['img']['name']); 
 
 if (move_uploaded_file($_FILES['img']['tmp_name'], $uploadfile)) {
