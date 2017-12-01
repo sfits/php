@@ -14,11 +14,19 @@
 </style>
 
 <?php
-$imgs = [1=>'1.jpg', 2=>'2.jpg', 3=>'3.jpg', 4=>'4.jpg'];
-	foreach ($imgs as $num => $img) {
-		echo '<a href="function.php?file=' . $num . '"><img src="/img/' . $imgs[$num] . '"></a>';
-	}
+
+if ($handle = opendir('img')) {
+    while (false !== ($file = readdir($handle))) { 
+    	$files = explode(' ', $file);
+        if ($file != "." && $file != "..") { 
+            echo '<a href="function.php?file=' . $file . '"><img src="/img/' . $file . '"></a>';
+        }
+    }
+    closedir($handle); 
+}
+
 ?>
+
 <hr><br>
 <form action="function.php" method="post" enctype="multipart/form-data">
 <input type="file" name="img">
