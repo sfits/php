@@ -1,21 +1,35 @@
 <?php
 
-// вывод картинки по клику
-if ($_GET['file']) {
-	echo '<img src="img/' . $_GET['file'] . '"></a>';
-} else {
-	header("Location: index.php");
-}
+class GuestBook
+{
+	protected $file;
 
-// проверка расширения файла
-$str = $_FILES['img']['name'];
-$dot = substr(strstr($str, '.'), 1, strlen($str));
+	public function __construct ()
+	{
+		$dir = __DIR__ . '/db.txt';
+		$this->file = file($dir);
+	}
 
-// загрузка файлов на сервер
-$uploaddir = __DIR__ . '/img/';
-if (($dot == 'jpg') or ($dot == 'jpeg') or ($dot == 'bmp')) {
-	$uploadfile = $uploaddir . basename($_FILES['img']['name']);
-	if (move_uploaded_file($_FILES['img']['tmp_name'], $uploadfile)) {
-		header("Location: index.php");
+	public function getData () 
+	{
+    	foreach ($this->file as $line) {
+    		echo $line . '<br>';  
+        }	
+	}
+
+	public function append ($text) 
+	{
+		$this->text = $_POST['message'];
+		if ($_POST['message'] == true) {
+	        $this->file[] .= "\n" . $_POST['message'];
+	        file_put_contents('db.txt', $this->file);
+	        	header("Location: index.php");
+        		exit;	
+	     	return $this->file;
+	    }
 	}
 }
+
+$book = new GuestBook();
+$book->append($text);
+$book->getData();
