@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-
 <?php
-include 'function.php';
-?>
 
-<hr><br>
-<form action="function.php" method="POST">
-	<input type="text" name="message">
-	<input type="submit" value="send">
-</form>
+require_once 'model/db.php';
 
-</body>
-</html>
+if ($_GET['file']) {
+    $content = 'templates/photo.php';
+} else {
+    $content = 'templates/list.php';
+}
+
+if (isset($_FILES['img'])) {
+    upload();
+}
+
+include 'templates/main.php';
