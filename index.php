@@ -1,15 +1,6 @@
 <?php
 
-require_once 'model/db.php';
+require_once 'functions.php';
+include_once 'form.php';
+displayAll();
 
-if ($_GET['file']) {
-    $content = 'templates/photo.php';
-} else {
-    $content = 'templates/list.php';
-}
-
-if (isset($_FILES['img'])) {
-    upload();
-}
-
-include 'templates/main.php';
