@@ -1,17 +1,17 @@
 <?php
 //
-// Ñïèñîê âñåõ ñòàòåé
-// 
+// Список всех статей
+//
 function articles_all()
 {
-	// Çàïðîñ.
+	// Запрос.
 	$query = "SELECT * FROM articles ORDER BY id_article DESC";
 	$result = mysql_query($query);
 							
 	if (!$result)
 		die(mysql_error());
 	
-	// Èçâëå÷åíèå èç ÁÄ.
+	// Извлечение из БД.
 	$n = mysql_num_rows($result);
 	$articles = array();
 
@@ -25,18 +25,18 @@ function articles_all()
 }
 
 //
-// Êîíêðåòíàÿ ñòàòüÿ
+// Конкретная статья
 //
 function articles_get($id_article)
 {
-	// Çàïðîñ.
+	// Запрос.
 	$query = "SELECT * FROM articles WHERE id_article ='$id_article'";
 	$result = mysql_query($query);
 							
 	if (!$result)
 		die(mysql_error());
 	if (mysql_num_rows($result)>0) {
-	// Èçâëå÷åíèå èç ÁÄ.
+	// Извлечение из БД.
 		$row = mysql_fetch_assoc($result);		
 	return $row;
 	}
@@ -44,19 +44,19 @@ function articles_get($id_article)
 }
 
 //
-// Äîáàâèòü ñòàòüþ
+// Добавить статью
 //
 function articles_new($title, $content)
 {
-	// Ïîäãîòîâêà.
+	// Подготовка.
 	$title = trim($title);
 	$content = trim($content);
 
-	// Ïðîâåðêà.
+	// Проверка.
 	if ($title == '')
 		return false;
 	
-	// Çàïðîñ.
+	// Запрос.
 	$t = "INSERT INTO articles (title, content) VALUES ('%s', '%s')";
 	
 	$query = sprintf($t, 
@@ -71,20 +71,20 @@ function articles_new($title, $content)
 }
 
 //
-// Èçìåíèòü ñòàòüþ
+// Изменить статью
 //
 function articles_edit($id_article, $title, $content)
 {
-// Ïîäãîòîâêà.
+// Подготовка.
 	$title = trim($title);
 	$content = trim($content);
 
-	// Ïðîâåðêà.
+	// Проверка.
 	if (!$id_article) return false;
 	if ($title == '')
 		return false;
 	
-	// Çàïðîñ.
+	// Запрос.
 	$t = "UPDATE articles SET title='%s', content='%s' WHERE id_article='%d'";
 	
 	$query = sprintf($t, 
@@ -100,7 +100,7 @@ function articles_edit($id_article, $title, $content)
 }
 
 //
-// Óäàëèòü ñòàòüþ
+// Удалить статью
 //
 function articles_delete($id_article)
 {
@@ -116,7 +116,7 @@ $query = sprintf($t, mysql_real_escape_string($id_article));
 }
 
 //
-// Êîðîòêîå îïèñàíèå ñòàòüè
+// Короткое описание статьи
 //
 function articles_intro($article)
 {
