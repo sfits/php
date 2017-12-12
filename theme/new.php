@@ -1,1 +1,37 @@
-<?/*Шаблон страницы добавления новой статьи=======================$title - заголовок$content - содержание*/?><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head>	<title>Blog</title>	<meta content="text/html; charset=Windows-1251" http-equiv="content-type">		<link rel="stylesheet" type="text/css" media="screen" href="theme/style.css" /> </head><body>	<h1>Blog</h1>	<br/>	<a href="index.php">Главная</a> |	<a href="editor.php">Консоль редактора</a>	<hr/>	<h1>Новая статья</h1>	<form method="post">		Название:		<br/>		<input type="text" name="title" value="<?=$title?>" />		<br/>		<br/>		Содержание:		<br/>		<textarea name="content"><?=$content?></textarea>		<br/>		<input type="submit" value="Добавить" />	</form>	<hr/>	<small><a href="">Copyright</a> &copy;</small>			</body></html>
+<?/*
+РЁР°Р±Р»РѕРЅ СЃС‚СЂР°РЅРёС†С‹ РґРѕР±Р°РІР»РµРЅРёСЏ РЅРѕРІРѕР№ СЃС‚Р°С‚СЊРё
+=======================
+$title - Р·Р°РіРѕР»РѕРІРѕРє
+$content - СЃРѕРґРµСЂР¶Р°РЅРёРµ
+*/?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Blog</title>
+	<meta content="text/html; charset=Windows-1251" http-equiv="content-type">	
+	<link rel="stylesheet" type="text/css" media="screen" href="theme/style.css" /> 
+</head>
+<body>
+	<h1>Blog</h1>
+	<br/>
+	<a href="index.php">Р“Р»Р°РІРЅР°СЏ</a> |
+	<a href="editor.php">РљРѕРЅСЃРѕР»СЊ СЂРµРґР°РєС‚РѕСЂР°</a>
+	<hr/>
+	<h1>РќРѕРІР°СЏ СЃС‚Р°С‚СЊСЏ</h1>
+	<form method="post">
+		РќР°Р·РІР°РЅРёРµ:
+		<br/>
+		<input type="text" name="title" value="<?=$title?>" />
+		<br/>
+		<br/>
+		РЎРѕРґРµСЂР¶Р°РЅРёРµ:
+		<br/>
+		<textarea name="content"><?=$content?></textarea>
+		<br/>
+		<input type="submit" value="Р”РѕР±Р°РІРёС‚СЊ" />
+	</form>
+	<hr/>
+	<small><a href="">Copyright</a> &copy;</small>			
+</body>
+</html>
