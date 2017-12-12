@@ -2,10 +2,10 @@
 include_once('startup.php');
 include_once('model.php');
 
-// Óñòàíîâêà ïàðàìåòðîâ, ïîäêëþ÷åíèå ê ÁÄ, çàïóñê ñåññèè.
+// Установка параметров, подключение к БД, запуск сессии.
 startup();
 
-// Îáðàáîòêà îòïðàâêè ôîðìû.
+// Обработка отправки формы.
 if (isset($_POST['ed']))
 {	
 	if (articles_edit($_POST['id'], $_POST['title'], $_POST['content']))
@@ -32,9 +32,8 @@ else
 	$content = $art['content'];
 }
 
-// Êîäèðîâêà.
+// Кодировка.
 header('Content-type: text/html; charset=windows-1251');
 
-// Âûâîä â øàáëîí.
+// Вывод в шаблон.
 include('theme/edit.php');
- 
