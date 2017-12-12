@@ -1,8 +1,8 @@
 <?/*
-Шаблон страницы изменения статьи
+РЁР°Р±Р»РѕРЅ СЃС‚СЂР°РЅРёС†С‹ РёР·РјРµРЅРµРЅРёСЏ СЃС‚Р°С‚СЊРё
 =======================
-$title - заголовок
-$content - содержание
+$title - Р·Р°РіРѕР»РѕРІРѕРє
+$content - СЃРѕРґРµСЂР¶Р°РЅРёРµ
 */?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -15,23 +15,23 @@ $content - содержание
 <body>
 	<h1>Blog</h1>
 	<br/>
-	<a href="index.php">Главная</a> |
-	<a href="editor.php">Консоль редактора</a>
+	<a href="index.php">Р“Р»Р°РІРЅР°СЏ</a> |
+	<a href="editor.php">РљРѕРЅСЃРѕР»СЊ СЂРµРґР°РєС‚РѕСЂР°</a>
 	<hr/>
-	<h1>Изменение статьи</h1>
+	<h1>РР·РјРµРЅРµРЅРёРµ СЃС‚Р°С‚СЊРё</h1>
 	<form method="post">
-		Название:
+		РќР°Р·РІР°РЅРёРµ:
 		<br/>
 		<input type="text" name="title" value="<?=$title?>" />
 		<br/>
 		<br/>
-		Содержание:
+		РЎРѕРґРµСЂР¶Р°РЅРёРµ:
 		<br/>
 		<textarea name="content"><?=$content?></textarea>
 		<br/>
 		<input type="hidden" name="id" value="<?=$id?>" />
-		<input type="submit" name = "ed" value="Сохранить" />
-		<input type="submit" name = "dl" value="Удалить" />
+		<input type="submit" name = "ed" value="РЎРѕС…СЂР°РЅРёС‚СЊ" />
+		<input type="submit" name = "dl" value="РЈРґР°Р»РёС‚СЊ" />
 	</form>
 	<hr/>
 	<small><a href="">Copyright</a> &copy;</small>			
