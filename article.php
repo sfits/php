@@ -2,7 +2,7 @@
 include_once('startup.php');
 include_once('model.php');
 
-// Установка параметров, подключение к БД, запуск сессии.
+// РЈСЃС‚Р°РЅРѕРІРєР° РїР°СЂР°РјРµС‚СЂРѕРІ, РїРѕРґРєР»СЋС‡РµРЅРёРµ Рє Р‘Р”, Р·Р°РїСѓСЃРє СЃРµСЃСЃРёРё.
 startup();
 
 if ($art=articles_get($_GET['id']))
@@ -11,8 +11,8 @@ if ($art=articles_get($_GET['id']))
 		$content = $art['content'];
 	}
 	
-// Кодировка.
+// РљРѕРґРёСЂРѕРІРєР°.
 header('Content-type: text/html; charset=windows-1251');
 
-// Вывод в шаблон.
+// Р’С‹РІРѕРґ РІ С€Р°Р±Р»РѕРЅ.
 include('theme/article.php');
