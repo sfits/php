@@ -1,22 +1,26 @@
-<?/*
-Шаблон страницы добавления новой статьи
-=======================
-$title - заголовок
-$content - содержание
-*/?>
+<?php
+    /*
+    РЁР°Р±Р»РѕРЅ РїСЂРѕСЃРјРѕС‚СЂР° СЃС‚Р°С‚СЊРё
+    =======================
+    
+    СЃС‚Р°С‚СЊСЏ:
+    article_id - РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ
+    article_title - Р·Р°РіРѕР»РІРѕРє
+    article_text - С‚РµРєСЃС‚
+    */
+?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-	<title>Blog</title>
-	<meta content="text/html; charset=Windows-1251" http-equiv="content-type">	
+	<title><?=$article['article_title'] ?></title>
 	<link rel="stylesheet" type="text/css" media="screen" href="theme/style.css" /> 
 </head>
 <body>
 	<h1>Blog</h1>
 	<br/>
-	<a href="index.php">Главная</a> |
-	<a href="editor.php">Консоль редактора</a>
+	<a href="index.php">Р“Р»Р°РІРЅР°СЏ</a> |
+	<a href="editor.php">РљРѕРЅСЃРѕР»СЊ СЂРµРґР°РєС‚РѕСЂР°</a>
 	<hr/>
 	<h1><?=$title?></h1>
 	<p><?=$content?></p>
