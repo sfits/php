@@ -32,8 +32,6 @@ else
 	$content = $art['content'];
 }
 
-// Кодировка.
-header('Content-type: text/html; charset=windows-1251');
 
 // Вывод в шаблон.
 include('theme/edit.php');

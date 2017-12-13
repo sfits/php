@@ -9,7 +9,7 @@ startup();
 $articles = articles_all();
 
 // Кодировка.
-header('Content-type: text/html; charset=windows-1251');
+// header('Content-type: text/html; charset=windows-1251');
 
 // Вывод в шаблон.
 include('theme/editor.php');

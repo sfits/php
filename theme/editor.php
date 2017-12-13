@@ -13,7 +13,7 @@ content - текст
 <html>
 <head>
 	<title>Blog</title>
-	<meta content="text/html; charset=Windows-1251" http-equiv="content-type">	
+	<!-- <meta content="text/html; charset=Windows-1251" http-equiv="content-type">	 -->
 	<link rel="stylesheet" type="text/css" media="screen" href="theme/style.css" /> 
 </head>
 <body>

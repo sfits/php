@@ -8,8 +8,5 @@ startup();
 // Извлечение статей.
 $articles = articles_all();
 
-// Кодировка.
-header('Content-type: text/html; charset=windows-1251');
-
 // Вывод в шаблон.
 include('theme/index.php');

@@ -10,9 +10,6 @@ if ($art=articles_get($_GET['id']))
 		$title = $art['title'];
 		$content = $art['content'];
 	}
-	
-// Кодировка.
-header('Content-type: text/html; charset=windows-1251');
 
 // Вывод в шаблон.
 include('theme/article.php');
