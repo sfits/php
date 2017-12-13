@@ -4,12 +4,9 @@ include_once('model.php');
 
 // Установка параметров, подключение к БД, запуск сессии.
 startup();
+$title = 'PHP. Уровень 2';
+$art=articles_get($_GET['id']);
 
-if ($art=articles_get($_GET['id']))
-	{
-		$title = $art['title'];
-		$content = $art['content'];
-	}
-
-// Вывод в шаблон.
-include('theme/article.php');
+// Внутренний шаблон.
+$content = view_include('theme/v_article.php', $art);
+include ('view.php');

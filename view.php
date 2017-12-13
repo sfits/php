@@ -1,0 +1,1 @@
+<?php$page = view_include(	'theme/v_main.php', 	array('title' => $title, 'content' => $content));// Вывод.echo $page;
