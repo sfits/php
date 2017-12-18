@@ -1,1 +1,0 @@
-<?phpinclude_once('startup.php');include_once('model.php');// Установка параметров, подключение к БД, запуск сессии.startup();$title = 'Режим редактора';// Извлечение статей.$articles = articles_all();// Внутренний шаблон.$content = view_include('theme/v_editor.php', array('articles' => $articles));include ('view.php');

@@ -1,5 +1,5 @@
 	<b>Главная</b> |
-	<a href="editor.php">Консоль редактора</a>
+	<a href="controller/editor.php">Консоль редактора</a>
 	<hr/>
 	<? foreach ($articles as $article): ?>
 			<a href="article.php?id=<?=$article['id_article']?>">

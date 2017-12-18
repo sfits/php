@@ -1,0 +1,1 @@
+<?phpinclude_once('../model/model.php');include_once('../index.php');$title = 'Режим редактора';// Извлечение статей.$articles = $art->articles_all();// Внутренний шаблон.$content = $art->view_include('../view/v_editor.php', array('articles' => $articles));include ('controller/view.php');

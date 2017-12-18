@@ -1,0 +1,1 @@
+<?php$page = $art->view_include(	'view/v_main.php', 	array('title' => $title, 'content' => $content));// Вывод.echo $page;
